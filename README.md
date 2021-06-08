@@ -6,10 +6,6 @@
   A Vue Component to <b>proportionally</b> scale your content
 </p>
 
-<h3 align="center">
-  <a align="center" href="#">Live Demo</a>
-</h3>
-
 ## Installation
 ```bash
 npm i vue-hako
