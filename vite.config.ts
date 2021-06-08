@@ -1,16 +1,13 @@
-import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
-
-declare const __dirname: string
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
-      name: 'Vaguer',
-      entry: path.resolve(__dirname, 'src/main.ts'),
+      name: 'vue-hako',
+      entry: './src/main.ts',
     },
     rollupOptions: {
       external: ['vue'],
@@ -24,7 +21,10 @@ export default defineConfig({
   plugins: [
     vue(),
     WindiCSS({
-      preflight: false,
+      scan: {
+        include: ['demo/**/*.{vue,html,jsx,tsx}'],
+      },
+      preflight: true,
     }),
   ],
 })

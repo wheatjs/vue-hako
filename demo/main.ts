@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
-import { VaguerComponents } from '../src/main'
+import { HakoPlugin } from '../src/main'
+import 'virtual:windi.css'
 import App from './App.vue'
 
-const app = createApp(App)
-app.use(VaguerComponents)
-app.mount('#app')
+createApp(App)
+  .use(HakoPlugin)
+  .mount('#app')

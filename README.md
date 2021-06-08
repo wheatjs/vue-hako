@@ -1,24 +1,72 @@
-# Vaguer
+<p align="center">
+  <img src='./public/Hako.svg' alt="VQL" width="500">
+</p>
 
-This repo provides a basic setup for developing component libraries in Vite with Vue 3
+<p align="center">
+  A Vue Component to <b>proportionally</b> scale your content
+</p>
 
-## Features
-- Type Generation
-- Tailwind CSS via [WindiCSS](https://windicss.netlify.app/)
-- Automatically export and register all components in `./src/components`
-- `./demo` folder where you can test your components
+<h3 align="center">
+  <a align="center" href="#">Live Demo</a>
+</h3>
 
-## Checklist
-After you clone the repo there are a few things you are going to want to change.
-
-- [ ] Rename `name` field in `package.json`
-- [ ] Rename `module` and `main` fields in `package.json`(for example `"module": "./dist/[my-package].js"`)
-- [ ] Make the same changes in the previous step to the exports field
-- [ ] Change the author name in `LICENSE`
-- [ ] Clean up the README
-
-## Commands
+## Installation
 ```bash
-npm run dev # Will run the demos app so you can see your components
-npm run build # Will build your components into a library and generate types
+npm i vue-hako
 ```
+
+## Usage
+
+Register the component to be used anywhere in your app.
+
+Inside of `main.js`
+```ts
+import { createApp } from 'vue'
+import { HakoPlugin } from 'vue-hako'
+import App from './App.vue'
+
+createApp(App)
+  .use(Hako)
+  .mount('#app')
+```
+
+Or import the component on a per-component basis.
+
+Inside of your component
+```html
+<script setup>
+import { Hako } from 'vue-hako'
+</script>
+
+<template>
+  ...
+</template>
+```
+
+Using the component
+
+```html
+<script setup>
+import { ref } from 'vue'
+
+const disableScaling = ref(false)
+const width = ref(1920)
+const height = ref(1080)
+</script>
+
+<template>
+  <div>
+    <Hako 
+      :width="width" 
+      :height="height" 
+      :disable-scaling="disableScaling"
+    >
+      This content will scale to its container
+    </Hako>
+  </div>
+</template>
+```
+
+## License
+
+[MIT License](https://github.com/jacobclevenger/vue-hako/blob/main/LICENSE) © 2021-PRESENT [Jacob Clevenger](https://github.com/jacobclevenger)
