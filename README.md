@@ -1,5 +1,5 @@
 <p align="center">
-  <img src='./public/Hako.svg' alt="VQL" width="600">
+  <img src='./public/Hako.svg' alt="VQL" width="500">
 </p>
 
 <p align="center">
